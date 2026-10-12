@@ -196,37 +196,35 @@ His biggest strengths are his defensive impact, ball winning and aerial duels. H
 <!-- Your starting model, your settings, and anything you changed and why. -->
 
 **Base model:**
+"distilbert-base-uncased"
 
-**Settings:** <!-- epochs, learning rate, batch size, seed -->
+**Settings:**
+EPOCHS = 3
+LEARNING_RATE = 2e-5
+BATCH_SIZE = 16
+MAX_LENGTH = 128
+SEED = 42
 
 **Anything I changed from the defaults, and why:**
 
-**Split sizes:** <!-- train / val / test, and per-label counts in the test
-split. If a label had fewer than about 8 in test, say so — it explains a lot
-of next unit's variance. -->
+**Split sizes:**
+70% train, 15% validation, 15% test.
 
 ---
 
 ## How I Used AI
 
-<!-- Two specific moments — what you asked, what came back, what you changed.
-
-     ⚠️ Plus disclosure of any pre-labelling. If you had a model pre-label a
-     batch and then read and corrected every one, say that. It's an allowed
-     workflow and disclosing it costs you nothing. Not disclosing it is the
-     problem. -->
-
 **Moment 1**
 
-- _What I asked for:_
-- _What came back:_
-- _What I changed:_
+- \_What I asked for:\_to better understand what is project is about.
+- _What came back:_ A great explanation of each step of the project.
+- _What I changed:_ I did not change anything.
 
 **Moment 2**
 
-- _What I asked for:_
-- _What came back:_
-- _What I changed:_
+- _What I asked for:_ Why do we need a decision rule between comments.
+- \_What came back:\_The decision rule keeps your labels consistent, and a model can only learn from consistent labels
+- _What I changed:_ Nothing.
 
 **Pre-labelling disclosure:**
 

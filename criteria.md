@@ -6,14 +6,14 @@ unit 5 **before** anything was trained.
 **All five are yours this time.** None are given. You've had two projects of
 practice.
 
-An acceptance criterion names a number. *"The model is accurate"* is an
-opinion. *"Every label has an F1 of at least 0.60 on the held-out set"* is a
+An acceptance criterion names a number. _"The model is accurate"_ is an
+opinion. _"Every label has an F1 of at least 0.60 on the held-out set"_ is a
 criterion.
 
 Under each, write a sentence or two on **why that number**. A reason that says
-something about your data or your taxonomy earns credit — *"I picked 0.60 F1
+something about your data or your taxonomy earns credit — _"I picked 0.60 F1
 for `reaction` because it's my smallest label and I only have about 50
-examples of it"*. A reason that could be attached to any project does not.
+examples of it"_. A reason that could be attached to any project does not.
 
 > Missing your own targets next unit costs you nothing. Setting a target so
 > easy you can't miss it does.
@@ -30,13 +30,13 @@ somewhere you'd honestly call useful.
 form to fill in — a criterion that fits none of them is fine if it names a
 number.
 
-| Area | A question it could answer |
-|---|---|
-| Overall accuracy | How often does it need to be right to be worth using? |
-| Per-label performance | Is one label allowed to be much worse than the others? |
-| Balance | How lopsided can your label counts get before it's a problem? |
-| Consistency | If someone else labelled the same posts, how often should you agree? |
-| Confidence | Should a confident prediction be right more often than an unsure one? |
+| Area                  | A question it could answer                                            |
+| --------------------- | --------------------------------------------------------------------- |
+| Overall accuracy      | How often does it need to be right to be worth using?                 |
+| Per-label performance | Is one label allowed to be much worse than the others?                |
+| Balance               | How lopsided can your label counts get before it's a problem?         |
+| Consistency           | If someone else labelled the same posts, how often should you agree?  |
+| Confidence            | Should a confident prediction be right more often than an unsure one? |
 
 Two things worth knowing before you pick numbers, because both will affect
 whether you hit them:
@@ -55,11 +55,7 @@ whether you hit them:
 
 <!-- Your criterion. It must name a number. -->
 
-
-
 **Why this target:**
-
-
 
 ---
 
@@ -67,11 +63,7 @@ whether you hit them:
 
 <!-- Your criterion. -->
 
-
-
 **Why this target:**
-
-
 
 ---
 
@@ -79,11 +71,7 @@ whether you hit them:
 
 <!-- Your criterion. -->
 
-
-
 **Why this target:**
-
-
 
 ---
 
@@ -91,11 +79,7 @@ whether you hit them:
 
 <!-- Your criterion. -->
 
-
-
 **Why this target:**
-
-
 
 ---
 
@@ -103,11 +87,7 @@ whether you hit them:
 
 <!-- Your criterion. -->
 
-
-
 **Why this target:**
-
-
 
 ---
 
