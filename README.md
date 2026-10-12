@@ -67,50 +67,63 @@ Link: https://www.reddit.com/r/soccer
      The decision rule is worth a point on its own and it's the thing most
      people leave out. Every taxonomy has a hardest boundary. Name yours. -->
 
-### `label_one`
+### Hot_take
 
 **Definition:**
-**"Scrap it. Players already play 60+ games a season, and these extra matches just lead to more injuries."**
-
+“States a confident opinion with no support”
 **Example 1:**
 
->
+> Yeah we don’t need or want these international friendlies. Only qualification matches should be played. Glad players are starting to fake injuries.
 
 **Example 2:**
 
->
+> Finally!! Lets go United!! Finally can be hopeful about our midfield.
 
-### `label_two`
+### Banter
 
-**Definition:**
-**“Every team should boo them like Liverpool did. The verdict proved they broke the rules.”**
+**Definition:** "Jokes about or taunts a team, player, or fans instead of making a point"
 **Example 1:**
 
->
+> Did Cucurella teach them this tactic after years of being the victim of it?
 
 **Example 2:**
 
->
+> That's why they brought in Cucurella. They use him for training.
 
-### `label_three'
+### Argued
 
-**“Two red cards for hair-pulling in one day isn’t a coincidence. Their players have done this before.”**
+**Definition:** "Supports its opinion with a reason, number, or specific event"
 **Example 1:**
 
->
+> Some data insights on Baleba compared to other Premier League DMs based on last season's performances:
+
+- 9th in defending
+- 15th in tackling
+- 21st in dribbling
+- 36th in overall rating
+- 40th in shooting
+- 41st in passing
+- 60th in creativity
+
+His biggest strengths are his defensive impact, ball winning and aerial duels. His biggest weaknesses are chance creation, final ball and shot accuracy..
 
 **Example 2:**
 
->
+> Happy with that. He’s had an off year but the talent was obvious in the season before last. Just have to hope he can refind his form.
 
 ### The hardest boundary
 
 **Which two labels:**
 
+> Argued and hot_take
+
+**Borderline comment:**
+
+> You can't have a break in December. Some countries don't even play football during winter at all.
+
 **The decision rule I used every time:**
 
-<!-- e.g. "If the post names a specific checkable fact, it's `analysis`, even
-     if the tone is heated." -->
+> If a comment offers any reason, number, or specific event, it's `argued`, even if the reason is weak or doesn't fully support the claim. I label whether support is present, not whether it's convincing. This comment gives a reason ("some countries don't play during winter"), so it's `argued`.
 
 ---
 
@@ -120,9 +133,10 @@ Link: https://www.reddit.com/r/soccer
      cases. -->
 
 **Where the posts came from:**
+[r/soccer](https://www.reddit.com/r/soccer/): comments from the Liverpool vs Man City post-match thread, the Nations League discussion, the Carlos Baleba transfer post, and the Real Madrid red cards post.
 
-**How I labelled them:** <!-- Cold first? Pre-labelled with AI and corrected?
-Say so plainly — the disclosure is required, not penalised. -->
+**How I labelled them:**
+Cold: you read each comment and picked the label yourself, with no AI.
 
 **Counts per label:**
 
