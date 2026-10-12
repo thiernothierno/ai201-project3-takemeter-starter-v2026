@@ -81,7 +81,8 @@ Link: https://www.reddit.com/r/soccer
 
 ### Banter
 
-**Definition:** "Jokes about or taunts a team, player, or fans instead of making a point"
+**Definition:**
+"Jokes about or taunts a team, player, or fans instead of making a point"
 **Example 1:**
 
 > Did Cucurella teach them this tactic after years of being the victim of it?
@@ -142,10 +143,10 @@ Cold: you read each comment and picked the label yourself, with no AI.
 
 | Label     | Count | Share |
 | --------- | ----- | ----- |
-|           |       |       |
-|           |       |       |
-|           |       |       |
-| **Total** |       | 100%  |
+| Argued    | 30    | 15%   |
+| Hot_take  | 120   | 60%   |
+| Banter    | 50    | 25%   |
+| **Total** | 200   | 100%  |
 
 **Three hard cases**
 
@@ -155,26 +156,38 @@ Cold: you read each comment and picked the label yourself, with no AI.
 **1.**
 
 > _The post:_
->
+> Finally!! Lets go United!! Finally can be hopeful about our midfield
 > _Could have been:_
->
-> _I chose, because:_
+> Argued or hot_take
+> \_I chose, hot_take because: It states a confident opinion with no support.
 
 **2.**
 
 > _The post:_
->
+> Some data insights on Baleba compared to other Premier League DMs based on last season's performances:
+
+- 9th in defending
+- 15th in tackling
+- 21st in dribbling
+- 36th in overall rating
+- 40th in shooting
+- 41st in passing
+- 60th in creativity
+
+His biggest strengths are his defensive impact, ball winning and aerial duels. His biggest weaknesses are chance creation, final ball and shot accuracy...
+
 > _Could have been:_
->
-> _I chose, because:_
+> Argued or hot_take
+> \_I chose, argued because: It provide support on why Babeba could be a best fit to handle United midfield issue.
 
 **3.**
 
 > _The post:_
->
+> Did Cucurella teach them this tactic after years of being the victim of it?
+
 > _Could have been:_
->
-> _I chose, because:_
+> hot_take or banter
+> \_I chose, banter because: It taunt a player instead of making a point.
 
 ---
 
