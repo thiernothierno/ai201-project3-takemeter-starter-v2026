@@ -1,0 +1,184 @@
+{
+  "model": "facebook/bart-large-mnli",
+  "n": 30,
+  "seed": 42,
+  "held_out": true,
+  "used_definitions": true,
+  "scores": {
+    "n": 30,
+    "accuracy": 0.4666666666666667,
+    "f1_macro": 0.380952380952381,
+    "per_label": {
+      "analysis": {
+        "precision": 0.4166666666666667,
+        "recall": 0.9090909090909091,
+        "f1": 0.5714285714285715,
+        "support": 11
+      },
+      "hot_take": {
+        "precision": 0.6666666666666666,
+        "recall": 0.5,
+        "f1": 0.5714285714285715,
+        "support": 8
+      },
+      "reaction": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 11
+      }
+    }
+  },
+  "predictions": [
+    {
+      "text": "Still completely meaningless even if they're in a competition.",
+      "gold": "hot_take",
+      "predicted": "hot_take"
+    },
+    {
+      "text": "Also, if you conside how many teams qualifies for WC on every continents and the representative on QF Euro teams still would have less percentage.",
+      "gold": "analysis",
+      "predicted": "analysis"
+    },
+    {
+      "text": "Referees don't let me get away with unsporting behavior and that upsets me",
+      "gold": "reaction",
+      "predicted": "analysis"
+    },
+    {
+      "text": "People talking about this being a must-watch. When it obviously would be better to boycott all city games until they get their punishment.",
+      "gold": "hot_take",
+      "predicted": "analysis"
+    },
+    {
+      "text": "Did Cucu teach them this tactic after years of being the victim of it?",
+      "gold": "reaction",
+      "predicted": "analysis"
+    },
+    {
+      "text": "Thank you Mr sheikh for this post",
+      "gold": "reaction",
+      "predicted": "analysis"
+    },
+    {
+      "text": "football is united against these cheating bastards",
+      "gold": "reaction",
+      "predicted": "analysis"
+    },
+    {
+      "text": "City fans chanting their owners names all day, no shame.",
+      "gold": "reaction",
+      "predicted": "hot_take"
+    },
+    {
+      "text": "Uh yeah\u2026I\u2019d rather not be in a group with Norway and Spain. The whole point of being in pot 1 is to avoid other pot 1 teams\u2026.because we didn\u2019t win our NL group in 2024, we were put in a group with Norway. Directly correlates.",
+      "gold": "analysis",
+      "predicted": "analysis"
+    },
+    {
+      "text": "I guess they do teach their players to pull their opponent's hair in their training grounds lol.",
+      "gold": "reaction",
+      "predicted": "analysis"
+    },
+    {
+      "text": "Yeah but the players need breaks, football is tiring",
+      "gold": "analysis",
+      "predicted": "analysis"
+    },
+    {
+      "text": "So why isn\u2019t there a salary cap then? Are United and Liverpool owned by progressive socialists? They get to stay at the top forever because they were good 40 years ago?",
+      "gold": "analysis",
+      "predicted": "analysis"
+    },
+    {
+      "text": "Happy with that. He\u2019s had an off year but the talent was obvious in the season before last. Just have to hope he can refind his form.",
+      "gold": "analysis",
+      "predicted": "analysis"
+    },
+    {
+      "text": "It's exactly what we want him to do. Win the ball, turn towards the oppositions half and drive the ball forward.",
+      "gold": "analysis",
+      "predicted": "analysis"
+    },
+    {
+      "text": "Release the Cucurella files. Make a joke on a player.",
+      "gold": "reaction",
+      "predicted": "analysis"
+    },
+    {
+      "text": "Can anyone provide an actual rebuttal to this guy's argument?The more \"you just don't get it\" responses, the more I think he has a point.",
+      "gold": "hot_take",
+      "predicted": "hot_take"
+    },
+    {
+      "text": "If you want to know why there are spending rules tied to a club\u2019s actual revenue you can take a look at what happened to LIV golf when the state sponsor got bored",
+      "gold": "analysis",
+      "predicted": "analysis"
+    },
+    {
+      "text": "You clearly have a fundamental misunderstanding of the situation and are unqualified to speak on this matter",
+      "gold": "hot_take",
+      "predicted": "hot_take"
+    },
+    {
+      "text": "It's gonna get a lot of viewership",
+      "gold": "hot_take",
+      "predicted": "analysis"
+    },
+    {
+      "text": "Most normal Real Madrid reaction to an officiating decision",
+      "gold": "reaction",
+      "predicted": "analysis"
+    },
+    {
+      "text": "Even if they win today City will remain cheaters and will get the same welcome for the rest of the season across the country",
+      "gold": "hot_take",
+      "predicted": "hot_take"
+    },
+    {
+      "text": "All these matches have been snooze fests too",
+      "gold": "hot_take",
+      "predicted": "analysis"
+    },
+    {
+      "text": "\"The average team in Africa\" is outside of the top 100 in the rankings, with the average European team roughly 50 places higher",
+      "gold": "analysis",
+      "predicted": "analysis"
+    },
+    {
+      "text": "Also, I feel like if we went for it today we would be safe and then could rest",
+      "gold": "analysis",
+      "predicted": "analysis"
+    },
+    {
+      "text": "can't even yank people by their hair so they get out of your way anymore because of woke, what's happened to the beautiful game",
+      "gold": "reaction",
+      "predicted": "analysis"
+    },
+    {
+      "text": "Anyone who says nations league doesn\u2019t matter has no idea what they are talking about.Sadly I feel the next campaign will be a political mess instead of a footballing campaign",
+      "gold": "hot_take",
+      "predicted": "analysis"
+    },
+    {
+      "text": "Can't speak on the timing and how to improve that, but if they are going to mandate international breaks, I much rather prefer teams of relatively equal strength play each other than Italy vs Luxembourg",
+      "gold": "analysis",
+      "predicted": "analysis"
+    },
+    {
+      "text": "Real Madrid heritage",
+      "gold": "reaction",
+      "predicted": "analysis"
+    },
+    {
+      "text": "The Nations League didn't increase the amount of international games played during a season. Dumb take",
+      "gold": "analysis",
+      "predicted": "hot_take"
+    },
+    {
+      "text": "I can't have pulled his hair, I have friends with hair.",
+      "gold": "reaction",
+      "predicted": "analysis"
+    }
+  ]
+}
