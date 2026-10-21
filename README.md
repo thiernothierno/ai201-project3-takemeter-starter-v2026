@@ -257,13 +257,15 @@ I didn't record a prediction before running the comparison, so I can't claim one
 <!-- Five criteria across three seeds. The notebook's section 6 prints the
      spread table; the Target and Verdict columns are yours. -->
 
-| Criterion                                                     | Target | Seed 42 | Seed 7 | Seed 2024 | Verdict |
-| ------------------------------------------------------------- | ------ | ------- | ------ | --------- | ------- |
-| 1. `hot_take` has an F1 of at least 0.62 on the held-out set. |        |         |        |           |         |
-| 2. `reaction` has an F1 of at least 0.58 on the held-out set. |        |         |        |           |         |
-| 3. `analysis` has an F1 of at least 0.51 on the held-out set. |        |         |        |           |         |
-| 4. Overall accuracy is at least 0.60 on the held-out set.     |        |         |        |           |         |
-| 5. Each label makes up at least 15% of the 200 comments.      |        |         |        |           |         |
+## Run Log — Before
+
+| Criterion                                                     | Target | Seed 42 | Seed 7 | Seed 2024 | Verdict      |
+| ------------------------------------------------------------- | ------ | ------- | ------ | --------- | ------------ |
+| 1. `hot_take` has an F1 of at least 0.62 on the held-out set. | 0.62   | 0.000   | 0.000  | 0.000     | Fail         |
+| 2. `reaction` has an F1 of at least 0.58 on the held-out set. | 0.58   | 0.632   | 0.706  | 0.727     | Pass         |
+| 3. `analysis` has an F1 of at least 0.51 on the held-out set. | 0.51   | 0.606   | 0.629  | 0.733     | Pass         |
+| 4. Overall accuracy is at least 0.60 on the held-out set.     | 0.60   | 0.533   | 0.567  | 0.633     | Inconclusive |
+| 5. Each label makes up at least 15% of the 200 comments.      | 15%    | 27%     | 27%    | 27%       | Pass         |
 
 ### Confusion matrix
 
@@ -278,9 +280,7 @@ I didn't record a prediction before running the comparison, so I can't claim one
 
 **My biggest off-diagonal number, and what it means:**
 
-<!-- Not "the model made mistakes" — WHICH boundary it didn't learn, and which
-     direction. "7 real analysis posts were called hot_take and only 3 went the
-     other way" is a direction, not just an error rate. -->
+7 real `hot_take` comments were predicted as `analysis`, and 0 went the other way. The model never learned the `hot_take`/`analysis` boundary. The entire `hot_take` column is 0, so it never predicts `hot_take` at all, and anything that looks like an opinion gets pushed into `analysis`. The same pull shows up with `reaction`: 5 real `reaction` comments were called `analysis`, while only 1 `analysis` comment was called `reaction`. The model treats `analysis` as its default answer.
 
 ---
 
@@ -289,13 +289,13 @@ I didn't record a prediction before running the comparison, so I can't claim one
 <!-- MET or MISSED against LAST UNIT's target. The target has to hold across
      all three seeds, not turn up sometimes. -->
 
-| #   | Criterion | Target | Verdict | How I decided |
-| --- | --------- | ------ | ------- | ------------- |
-| 1   |           |        |         |               |
-| 2   |           |        |         |               |
-| 3   |           |        |         |               |
-| 4   |           |        |         |               |
-| 5   |           |        |         |               |
+| #   | Criterion                | Target | Verdict | How I decided                                                                                                      |
+| --- | ------------------------ | ------ | ------- | ------------------------------------------------------------------------------------------------------------------ |
+| 1   | `hot_take` F1            | ≥ 0.62 | MISSED  | 0.000 on all three seeds (42, 7, 2024).                                                                            |
+| 2   | `reaction` F1            | ≥ 0.58 | MET     | Lowest seed was 0.632 (seed 42), above target on all three.                                                        |
+| 3   | `analysis` F1            | ≥ 0.51 | MET     | Lowest seed was 0.606 (seed 42), above target on all three.                                                        |
+| 4   | Overall accuracy         | ≥ 0.60 | MISSED  | Only seed 2024 reached it (0.633). Seeds 42 (0.533) and 7 (0.567) fell short, so it doesn't hold across all three. |
+| 5   | Each label ≥ 15% of data | ≥ 15%  | MET     | Smallest label is `hot_take` at 54/200 = 27%. This is a dataset property, so it's the same for every seed.         |
 
 **Diagnoses**
 
@@ -307,6 +307,18 @@ I didn't record a prediction before running the comparison, so I can't claim one
      ⚠️ Use your agreement report as evidence. It is the only instrument you
      have that can tell a LABELLING problem from a MODEL problem, and this
      section is graded on whether you used it that way. -->
+
+**Miss 1: `hot_take` F1 = 0.000**
+
+Cause: a boundary I applied inconsistently between `hot_take` and `analysis`, made worse by `hot_take` being my smallest label (38 training examples).
+
+How I know: The confusion matrix shows the model sends every `hot_take` comment somewhere else, mostly to `analysis` (7 of 8). My agreement report shows [INSERT: agreement on `hot_take`, e.g. "I agreed with my own earlier labels on only X of Y hot_take comments"], compared with [INSERT: agreement on analysis/reaction]. Low agreement on `hot_take` means the labels themselves were inconsistent, so this is a labelling problem, not only a model problem. My decision rule ("any reason, even a weak one, makes it `analysis`") also made the boundary hard to apply: many confident opinions contain a half-reason, so similar comments ended up on both sides.
+
+**Miss 4: Overall accuracy below 0.60 on 2 of 3 seeds**
+
+Cause: mostly a knock-on effect of Miss 1.
+
+How I know: `hot_take` is 8 of the 30 test comments, and the model gets all 8 wrong on every seed. Even if everything else were perfect, the best possible accuracy would be 22/30 = 0.733. The real ceiling is lower, because 5 `reaction` comments also go to `analysis`. Fixing the `hot_take` boundary would fix most of this miss.
 
 ---
 
