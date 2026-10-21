@@ -61,12 +61,6 @@ Link: https://www.reddit.com/r/soccer
 
 ## Label Taxonomy
 
-<!-- Each label: a one-sentence definition and two real examples from your
-     reading. Then your decision rule for the hardest boundary.
-
-     The decision rule is worth a point on its own and it's the thing most
-     people leave out. Every taxonomy has a hardest boundary. Name yours. -->
-
 ### Hot_take
 
 **Definition:**
@@ -79,7 +73,7 @@ Link: https://www.reddit.com/r/soccer
 
 > Finally!! Lets go United!! Finally can be hopeful about our midfield.
 
-### Banter
+### Reaction
 
 **Definition:**
 "Jokes about or taunts a team, player, or fans instead of making a point"
@@ -91,7 +85,7 @@ Link: https://www.reddit.com/r/soccer
 
 > That's why they brought in Cucurella. They use him for training.
 
-### Argued
+### Analysis
 
 **Definition:** "Supports its opinion with a reason, number, or specific event"
 **Example 1:**
@@ -116,7 +110,7 @@ His biggest strengths are his defensive impact, ball winning and aerial duels. H
 
 **Which two labels:**
 
-> Argued and hot_take
+> analysis and hot_take
 
 **Borderline comment:**
 
@@ -143,9 +137,9 @@ Cold: you read each comment and picked the label yourself, with no AI.
 
 | Label     | Count | Share |
 | --------- | ----- | ----- |
-| Argued    | 30    | 15%   |
+| Analysis  | 30    | 15%   |
 | Hot_take  | 120   | 60%   |
-| Banter    | 50    | 25%   |
+| Reaction  | 50    | 25%   |
 | **Total** | 200   | 100%  |
 
 **Three hard cases**
@@ -158,7 +152,7 @@ Cold: you read each comment and picked the label yourself, with no AI.
 > _The post:_
 > Finally!! Lets go United!! Finally can be hopeful about our midfield
 > _Could have been:_
-> Argued or hot_take
+> Analysis or hot_take
 > \_I chose, hot_take because: It states a confident opinion with no support.
 
 **2.**
@@ -177,8 +171,8 @@ Cold: you read each comment and picked the label yourself, with no AI.
 His biggest strengths are his defensive impact, ball winning and aerial duels. His biggest weaknesses are chance creation, final ball and shot accuracy...
 
 > _Could have been:_
-> Argued or hot_take
-> \_I chose, argued because: It provide support on why Babeba could be a best fit to handle United midfield issue.
+> Analysis or hot_take
+> \_I chose, analysis because: It provide support on why Babeba could be a best fit to handle United midfield issue.
 
 **3.**
 
@@ -242,46 +236,45 @@ SEED = 42
 
 | Measure          | Baseline | Trained | Difference |
 | ---------------- | -------- | ------- | ---------- |
-| Overall accuracy |          |         |            |
-| Macro F1         |          |         |            |
-| F1 — `label_one` |          |         |            |
-| F1 — `label_two` |          |         |            |
+| Overall accuracy | 0.467    | 0.533   | +0.067     |
+| Macro F1         | 0.381    | 0.413   | +0.032     |
+| F1 — `analysis`  | 0.571    | 0.606   | +0.035     |
+| F1 — `hot_take`  | 0.571    | 0.000   | -0.571     |
+| F1 — `reaction`  | 0.000    | 0.632   | +0.632     |
 
 **What I predicted before I looked:**
 
-<!-- Milestone 1 asks you to write this BEFORE seeing the trained numbers. A
-     prediction made afterwards isn't one. -->
+**What I predicted before I looked:**
+
+I didn't record a prediction before running the comparison, so I can't claim one here. Looking back, I would have expected the trained model to do better on `reaction`, since it saw many r/soccer jokes and taunts during training, but that expectation was formed after seeing the results and doesn't count as a prediction.
 
 **What the gap actually means:**
 
-<!-- If the baseline matched your trained model, your fine-tuning added
-     nothing — and that is a real finding, not a failure. Say it plainly. -->
-
----
+## The trained model beat the baseline by only 0.067 accuracy, which is 2 comments out of 30, so fine-tuning added very little overall. The bigger finding is that each model fails on a different label: the trained model never got hot_take right (F1 0.000), while the baseline never got reaction right (F1 0.000). Fine-tuning taught the model r/soccer’s sarcasm and taunts, which the general model took literally, but it lost the ability to recognize unsupported opinions, my smallest label with only 38 training and 8 test examples. With just 30 test comments, these differences are fragile, and a few comments either way would change them.
 
 ## Run Log — Before
 
 <!-- Five criteria across three seeds. The notebook's section 6 prints the
      spread table; the Target and Verdict columns are yours. -->
 
-| Criterion | Target | Seed 42 | Seed 7 | Seed 2024 | Verdict |
-| --------- | ------ | ------- | ------ | --------- | ------- |
-| 1.        |        |         |        |           |         |
-| 2.        |        |         |        |           |         |
-| 3.        |        |         |        |           |         |
-| 4.        |        |         |        |           |         |
-| 5.        |        |         |        |           |         |
+| Criterion                                                     | Target | Seed 42 | Seed 7 | Seed 2024 | Verdict |
+| ------------------------------------------------------------- | ------ | ------- | ------ | --------- | ------- |
+| 1. `hot_take` has an F1 of at least 0.62 on the held-out set. |        |         |        |           |         |
+| 2. `reaction` has an F1 of at least 0.58 on the held-out set. |        |         |        |           |         |
+| 3. `analysis` has an F1 of at least 0.51 on the held-out set. |        |         |        |           |         |
+| 4. Overall accuracy is at least 0.60 on the held-out set.     |        |         |        |           |         |
+| 5. Each label makes up at least 15% of the 200 comments.      |        |         |        |           |         |
 
 ### Confusion matrix
 
 <!-- ⚠️ TYPED AS A MARKDOWN TABLE. The notebook prints one ready to paste.
      An image of a matrix earns nothing. -->
 
-| true \ predicted |     |     |     |
-| ---------------- | --- | --- | --- |
-| \*\*\*\*         |     |     |     |
-| \*\*\*\*         |     |     |     |
-| \*\*\*\*         |     |     |     |
+| true \ predicted | analysis | hot_take | reaction |
+| ---------------- | -------- | -------- | -------- |
+| **analysis**     | 10       | 0        | 1        |
+| **hot_take**     | 7        | 0        | 1        |
+| **reaction**     | 5        | 0        | 6        |
 
 **My biggest off-diagonal number, and what it means:**
 
